@@ -31,7 +31,16 @@ namespace SpaceInvadersT
             this.Add(player);
 
 
-                }
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+
+            player.Update();
+
+        }
+
 
 
     }
