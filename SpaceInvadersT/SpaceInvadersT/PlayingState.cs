@@ -16,8 +16,21 @@ namespace SpaceInvadersT
     {
         public Player player;
         public SpriteGameObject background;
-        public GameObjectList invaders;
+        private GameObjectList invaders;
         public Invaders blueInvaders;
+
+        public GameObjectList Invaders
+        {
+            get
+            {
+                return invaders;
+            }
+
+            set
+            {
+                invaders = value;
+            }
+        }
 
         public PlayingState() {
 
@@ -48,6 +61,7 @@ namespace SpaceInvadersT
             base.Update(gameTime);
 
             player.Update();
+            blueInvaders.Update();
 
         }
 
