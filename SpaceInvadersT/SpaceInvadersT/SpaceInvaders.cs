@@ -31,9 +31,8 @@ namespace SpaceInvadersT
 
             // TODO: add gamestate to GameStateManager here
 
-            gameStateManager.AddGameState("PlayingState",new PlayingState))
-
-
+            gameStateManager.AddGameState("PlayingState",new PlayingState());
+            gameStateManager.SwitchTo("PlayingState");
 
 
 
