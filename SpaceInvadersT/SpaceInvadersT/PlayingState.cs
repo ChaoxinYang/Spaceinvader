@@ -16,20 +16,30 @@ namespace SpaceInvadersT
     {
         public Player player;
         public SpriteGameObject background;
+        public GameObjectList invaders;
+        public Invaders blueInvaders;
 
         public PlayingState() {
 
-
-            player = new Player();
-
+            GameObjectList invaders = new GameObjectList();
+            
             background = new SpriteGameObject("background");
 
+            player = new Player();
             player.Position = new Vector2(400, 580);
+
+            blueInvaders = new Invaders("blue_invader");
+            blueInvaders.Position = new Vector2(200, 100);
+
 
 
             this.Add(background);
             this.Add(player);
 
+            invaders.Add(blueInvaders);
+            this.Add(invaders);
+            
+            
 
         }
 

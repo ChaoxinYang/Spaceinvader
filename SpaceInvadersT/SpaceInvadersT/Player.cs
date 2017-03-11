@@ -25,22 +25,9 @@ namespace SpaceInvadersT
 
         public  bool Update()
         {
-            // Assume player is not moving
+            
            velocity.X = 0;
 
-            // Alter velocity when keys are pressed
-            // if (Global.keys.IsKeyDown(Keys.Left)) velocity.X = -10.0f;
-            // if (Global.keys.IsKeyDown(Keys.Right)) velocity.X = 10.0f;
-
-            //position += velocity;
-
-            // If x position is out of bounds, "undo" velocity
-            if ((position.X < 100) || (position.X > SpaceInvaders.Screen.X - Width - 100))
-            {
-               
-                position -= velocity;
-                Console.WriteLine("S");
-            }
           
            
             return true;
