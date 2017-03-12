@@ -24,14 +24,14 @@ namespace SpaceInvadersT
         public PlayingState() {
 
             GameObjectList invaders = new GameObjectList();
-            GameObjectList bullets = new GameObjectList();
-
+           
             background = new SpriteGameObject("background");
 
             player = new Player();
             player.Position = new Vector2(400, 580);
 
-            
+          
+           
             for(int totalInvaders = 0; totalInvaders< 9; totalInvaders++)
             {
 
@@ -56,6 +56,7 @@ namespace SpaceInvadersT
                 invaders.Add(greenInvaders);
                 invaders.Add(yellowInvaders);
                 invaders.Add(redInvaders);
+              
             }
         
 
@@ -65,7 +66,7 @@ namespace SpaceInvadersT
 
             
             this.Add(invaders);
-            this.Add(bullets);
+           
             
 
         }
@@ -75,22 +76,24 @@ namespace SpaceInvadersT
             base.Update(gameTime);
 
             player.Update();
-
+            
 
         }
 
         public override void HandleInput(InputHelper inputHelper)
         {
             base.HandleInput(inputHelper);
-
+            GameObjectList bullets = new GameObjectList();
+            this.Add(bullets);
             if (inputHelper.KeyPressed(Keys.Space)){
 
                 Bullet bullet = new Bullet();
                 bullet.Position = player.Position;
                 this.Add(bullet);
-               
+                bullets.Add(bullet);
+                
             }
-
+            
 
         }
 

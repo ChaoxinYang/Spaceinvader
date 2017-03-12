@@ -6,10 +6,11 @@ using Microsoft.Xna.Framework;
 
 namespace SpaceInvadersT
 {
-    class Bullet :SpriteGameObject
+    class Bullet : SpriteGameObject
     {
 
-        public Bullet():base("bullet") {
+        public Bullet() : base("bullet")
+        {
 
             velocity.Y = -5;
         }
@@ -18,8 +19,17 @@ namespace SpaceInvadersT
         {
             base.Update(gameTime);
             this.position += velocity;
+           
+
+
         }
 
 
+        public override void Reset()
+        {
+            base.Reset();
+            visible = false;
+            velocity.Y = 0;
+        }
     }
 }

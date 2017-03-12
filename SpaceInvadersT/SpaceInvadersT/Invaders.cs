@@ -38,6 +38,7 @@ namespace SpaceInvadersT
                 this.position.Y += shift;
             }
 
+
         }
 
 
