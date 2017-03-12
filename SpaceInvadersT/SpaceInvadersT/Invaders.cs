@@ -22,21 +22,20 @@ namespace SpaceInvadersT
             Itex = new SpriteSheet(assetName);
             sprite = Itex;
 
-            velocity.X = 3;
-            
+            velocity.X = 2;
 
         }
 
 
-        public void Update()
+        public override void Update(GameTime gameTime)
         {
-            position.X += velocity.X;
-
-            if ((position.X > SpaceInvaders.Screen.X - Itex.Width) || (position.X < 0))
+            this.position.X += this.velocity.X;
+            
+            if ((this.position.X > SpaceInvaders.Screen.X - Itex.Width) || (this.position.X < 0))
             {
-                position.X -= velocity.X;
-                velocity.X = -velocity.X;
-                position.Y += shift;
+                this.position.X -= this.velocity.X;
+                this.velocity.X = -this.velocity.X;
+                this.position.Y += shift;
             }
 
         }
