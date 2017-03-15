@@ -16,9 +16,9 @@ namespace SpaceInvadersT
         protected SpriteSheet Itex;
         protected int shift = 50;
 
-
+       
         public Invaders(string assetName) : base("") {
-
+            
             Itex = new SpriteSheet(assetName);
             sprite = Itex;
 
@@ -41,7 +41,7 @@ namespace SpaceInvadersT
 
         }
 
-
+        
 
 
 

@@ -31,5 +31,12 @@ namespace SpaceInvadersT
             visible = false;
             velocity.Y = 0;
         }
+
+       /* public bool collide()
+        {
+           // return CollidesWith(PlayingState.player);
+
+        }*/
+
     }
 }

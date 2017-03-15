@@ -12,27 +12,29 @@ using Microsoft.Xna.Framework.Media;
 
 namespace SpaceInvadersT
 {
-    class PlayingState :GameObjectList
+    class PlayingState : GameObjectList
     {
         public Player player;
         public SpriteGameObject background;
         public GameObjectList invaders;
-        private GameObjectList bullets;
+        public GameObjectList bullets;
 
-        
 
-        public PlayingState() {
 
-            GameObjectList invaders = new GameObjectList();
-           
+
+        public PlayingState()
+        {
+             bullets = new GameObjectList();
+             invaders = new GameObjectList(0, "invaders");
+
             background = new SpriteGameObject("background");
 
             player = new Player();
-            player.Position = new Vector2(400, 580);
+            player.Position = new Vector2(SpaceInvaders.Screen.X / 2 - player.Width / 2, SpaceInvaders.Screen.Y - player.Height);
 
-          
-           
-            for(int totalInvaders = 0; totalInvaders< 9; totalInvaders++)
+
+
+            for (int totalInvaders = 0; totalInvaders < 9; totalInvaders++)
             {
 
 
@@ -56,18 +58,18 @@ namespace SpaceInvadersT
                 invaders.Add(greenInvaders);
                 invaders.Add(yellowInvaders);
                 invaders.Add(redInvaders);
-              
+
             }
-        
+
 
 
             this.Add(background);
             this.Add(player);
+            //this.Add(bullets);
 
-            
             this.Add(invaders);
-           
-            
+
+
 
         }
 
@@ -76,26 +78,48 @@ namespace SpaceInvadersT
             base.Update(gameTime);
 
             player.Update();
-            
+
+            foreach (Bullet a in bullets.Objects)
+            {
+
+                foreach (Invaders b in invaders.Objects)
+                {
+
+                    if(a.Visible && b.Visible && a.CollidesWith(b)){
+
+                        a.Visible = false;
+                        b.Visible = false;
+
+
+                    }
+
+
+
+                }
+            } 
+
 
         }
 
         public override void HandleInput(InputHelper inputHelper)
         {
             base.HandleInput(inputHelper);
-            GameObjectList bullets = new GameObjectList();
-            this.Add(bullets);
-            if (inputHelper.KeyPressed(Keys.Space)){
+
+          
+
+            if (inputHelper.KeyPressed(Keys.Space))
+            {
 
                 Bullet bullet = new Bullet();
                 bullet.Position = player.Position;
                 this.Add(bullet);
                 bullets.Add(bullet);
-                
+
             }
-            
+
 
         }
+      
 
 
 

@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceInvadersT", "SpaceInvadersT\SpaceInvadersT\SpaceInvadersT.csproj", "{53022284-875A-4F91-8106-79DB4E1C7EBB}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "SpaceInvadersTContent", "SpaceInvadersT\SpaceInvadersTContent\SpaceInvadersTContent.contentproj", "{2B1CE51F-7AE1-41A5-9D94-72AD0C9B6482}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceInvadersTContent", "SpaceInvadersT\SpaceInvadersTContent\SpaceInvadersTContent.contentproj", "{2B1CE51F-7AE1-41A5-9D94-72AD0C9B6482}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameManagement", "..\..\..\..\..\..\Desktop\GameManagement\GameManagement.csproj", "{6CEB5F37-0BFA-4A0D-8DB7-B25ECD81CAAE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameManagement", "..\..\Desktop\GameManagement\GameManagement.csproj", "{6CEB5F37-0BFA-4A0D-8DB7-B25ECD81CAAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
