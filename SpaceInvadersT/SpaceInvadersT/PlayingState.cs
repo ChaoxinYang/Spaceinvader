@@ -19,8 +19,8 @@ namespace SpaceInvadersT
         public GameObjectList invaders;
         public GameObjectList bullets;
 
-
-
+        private int score;
+        private TextGameObject scoreText;
 
         public PlayingState()
         {
@@ -61,14 +61,14 @@ namespace SpaceInvadersT
 
             }
 
-
+            scoreText = new TextGameObject("GameFont");
+         
+            scoreText.Position = new Vector2(30, 10);
 
             this.Add(background);
             this.Add(player);
-            //this.Add(bullets);
-
             this.Add(invaders);
-
+            this.Add(scoreText);
 
 
         }
@@ -78,7 +78,7 @@ namespace SpaceInvadersT
             base.Update(gameTime);
 
             player.Update();
-
+            scoreText.Text = ("Score: " + score);
             foreach (Bullet a in bullets.Objects)
             {
 
@@ -90,7 +90,7 @@ namespace SpaceInvadersT
                         a.Visible = false;
                         b.Visible = false;
 
-
+                        score += 10;
                     }
 
 
@@ -119,9 +119,25 @@ namespace SpaceInvadersT
 
 
         }
-      
 
 
+        public int Score
+        {
+
+            get { return score; }
+            set
+            {
+                score = value;
+
+                if (scoreText != null)
+                    scoreText.Text = "Score: " + value;
+
+
+
+            }
+
+
+        }
 
     }
 }
